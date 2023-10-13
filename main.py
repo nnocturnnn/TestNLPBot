@@ -1,13 +1,13 @@
 import asyncio
 from aiogram import Bot, Dispatcher
-from config import CONFIG
+# from config import CONFIG
 from handlers import base, media
 import whisper
 
 
-bot = Bot(token=CONFIG.bot_token.get_secret_value())
-model = whisper.load_model("base")
-
+# bot = Bot(token=CONFIG.bot_token.get_secret_value())
+bot = Bot(token="2012288461:AAF17OpsUEg326IvFbDSE1ma4wwyHGV-0Pw")
+# model = whisper.load_model("base")
 
 async def main():
     dp = Dispatcher()
