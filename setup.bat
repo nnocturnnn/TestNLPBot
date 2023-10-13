@@ -8,3 +8,5 @@ myenv\Scripts\activate
 
 rem Install requirements
 pip install -r requirements.txt
+
+choco install ffmpeg
