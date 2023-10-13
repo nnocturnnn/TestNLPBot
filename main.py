@@ -4,9 +4,10 @@ from aiogram import Bot, Dispatcher
 
 # from config import CONFIG
 from handlers import base, media
+import os
 
 # bot = Bot(token=CONFIG.bot_token.get_secret_value())
-bot = Bot(token="2012288461:AAF17OpsUEg326IvFbDSE1ma4wwyHGV-0Pw")
+bot = Bot(token=os.getenv("TELEGRAM_API_KEY"))
 
 
 async def main():

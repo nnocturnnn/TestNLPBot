@@ -36,13 +36,15 @@ def get_current_weather(location):
         raise e
 
 
-def get_natural_response(content):
+def get_natural_response(content, question):
     convert_prompt = f"convert this results from weather api\
-          to a natural english sentence: {content}"
+          to a natural english sentence and connect this result to this question\
+          {question}: {content}"
     messages.append({"role": "user", "content": convert_prompt})
     convert_prompt_response = chat_completion_request(messages=messages)
     new_assistant_message = convert_prompt_response.json()
     new_assistant_message = new_assistant_message["choices"][0]["message"]
     messages.append(new_assistant_message)
     content = new_assistant_message["content"]
+    # small time crutch  
     return content

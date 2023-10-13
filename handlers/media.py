@@ -35,5 +35,5 @@ async def check_weather(message: Message):
     assistant_message = chat_response.json()["choices"][0]["message"]
     results = execute_function_call(assistant_message)
     content = json.dumps(results)
-    content = get_natural_response(content)
+    content = get_natural_response(content, message.text)
     await message.reply(content)
