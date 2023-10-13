@@ -1,10 +1,12 @@
-from aiogram import Router, F
-from aiogram.types import Message
-from utils.llm import chat_completion_request, messages, functions
-from utils.misc import execute_function_call, get_natural_response
-from utils.describe import transcribe_audio
 import json
 import os
+
+from aiogram import F, Router
+from aiogram.types import Message
+
+from utils.describe import transcribe_audio
+from utils.llm import chat_completion_request, functions, messages
+from utils.misc import execute_function_call, get_natural_response
 
 router = Router()
 

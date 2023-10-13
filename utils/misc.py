@@ -1,6 +1,8 @@
-import requests
-import os
 import json
+import os
+
+import requests
+
 from utils.llm import chat_completion_request, messages
 
 

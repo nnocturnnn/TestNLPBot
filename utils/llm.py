@@ -1,6 +1,8 @@
-import requests
-from utils.consts import system_instruction
 import os
+
+import requests
+
+from utils.consts import system_instruction
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 GPT_MODEL = "gpt-3.5-turbo-0613"
