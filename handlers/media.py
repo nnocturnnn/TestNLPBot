@@ -17,11 +17,11 @@ async def convert_audio(message: Message):
     elif message.voice:
         await message.bot.download(message.voice, destination=filename)
     await message.reply(await transcribe_audio())
-    # try:
-    #     os.remove(filename)
-    #     print(f"File '{filename}' has been successfully removed.")
-    # except OSError as e:
-    #     print(f"Error: {e}")
+    try:
+        os.remove(filename)
+        print(f"File '{filename}' has been successfully removed.")
+    except OSError as e:
+        print(f"Error: {e}")
 
 
 @router.message()
