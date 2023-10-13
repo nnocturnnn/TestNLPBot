@@ -21,3 +21,8 @@ You might want to use the following technologies: OpenAI API, LangChain, Telegra
 ```bash
 chmod +x pre-install.sh
 ./pre-install.sh
+```
+2. Run the chatbot using the following command:
+```
+python3 main.py
+```
