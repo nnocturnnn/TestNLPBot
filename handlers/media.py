@@ -28,7 +28,8 @@ async def convert_audio(message: Message):
 async def check_weather(message: Message):
     user_message = message.text
     messages.append({"role": "user", "content": user_message})
-    chat_response = chat_completion_request(messages=messages, functions=functions)
+    chat_response = chat_completion_request(messages=messages,
+                                            functions=functions)
     assistant_message = chat_response.json()["choices"][0]["message"]
     results = execute_function_call(assistant_message)
     content = json.dumps(results)

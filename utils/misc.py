@@ -11,7 +11,7 @@ def execute_function_call(assistant_message):
         ]
         results = get_current_weather(location)
     else:
-        results = f"Error: function {assistant_message['function_call']['name']} does not exist"
+        results = "Error: function does not exist"
 
     return results
 
@@ -35,10 +35,12 @@ def get_current_weather(location):
 
 
 def get_natural_response(content):
-    convert_prompt = f"convert this results from weather api to a natural english sentence: {content}"
+    convert_prompt = f"convert this results from weather api\
+          to a natural english sentence: {content}"
     messages.append({"role": "user", "content": convert_prompt})
     convert_prompt_response = chat_completion_request(messages=messages)
-    new_assistant_message = convert_prompt_response.json()["choices"][0]["message"]
+    new_assistant_message = convert_prompt_response.json()
+    new_assistant_message = new_assistant_message["choices"][0]["message"]
     messages.append(new_assistant_message)
     content = new_assistant_message["content"]
     return content
