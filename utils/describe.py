@@ -1,6 +1,7 @@
 import whisper
 
-model = whisper.load_model("base") #TODO maybe move to main???
+model = whisper.load_model("base")  # TODO maybe move to main???
+
 
 async def transcribe_audio() -> str:
     # audio = whisper.load_audio("audio.mp3")
@@ -12,4 +13,3 @@ async def transcribe_audio() -> str:
     # result = whisper.decode(model, mel, options)
     result = model.transcribe("audio.mp3")
     return result["text"]
-
